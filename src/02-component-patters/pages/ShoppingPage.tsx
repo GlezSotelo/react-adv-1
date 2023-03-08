@@ -5,6 +5,7 @@ import {
   ProductTitle,
 } from "../components";
 import { Product } from "../interfaces/interfaces";
+import "../styles/custom-styles.css";
 
 const product: Product = {
   id: "1",
@@ -25,11 +26,23 @@ export const ShoppingPage = () => {
         }}
       >
         <ProductCart product={product}>
-          <ProductCart.Image />
+          <ProductCart.Image className='custom-image' />
           <ProductCart.Title />
           <ProductCart.Buttons />
         </ProductCart>
-        <ProductCart product={product}>
+
+        <ProductCart product={product} className='bg-dark'>
+          <ProductImage className='custom-image' />
+          <ProductTitle className='text-white' />
+          <ProductButtons className='custom-buttons' />
+        </ProductCart>
+
+        <ProductCart
+          product={product}
+          style={{
+            backgroundColor: "#70D1F8",
+          }}
+        >
           <ProductImage />
           <ProductTitle />
           <ProductButtons />
